@@ -67,7 +67,24 @@
                     </div>
                 </div>
                 <p style="color: red; display: none;" class="error_message_for_create">Заполните все поля помеченные звёздочкой.</p>
-                <div id="personal-submit" class="register-button"><p>Сохранить данные</p></div>
+                <input id="personal-submit" class="register-button" value="Сохранить данные" type="submit">
+            </form>
+        </div>
+        <div class="customer-data-container">
+            <form action="/change-password" method="POST" id="change-password">
+                <div class="personal-filds-label-input">
+                    <label class="personal-filds-label" for="password">Старый пароль</label>
+                    <input id="password-old" name="password-old" type="password" placeholder="Введите пароль">
+                </div>
+                <div class="personal-filds-label-input">
+                    <label class="personal-filds-label" for="password">Новый пароль</label>
+                    <input id="password" name="password" type="password" placeholder="Введите пароль">
+                </div>
+                <div class="personal-filds-label-input">
+                    <label class="personal-filds-label" for="password-again">Повтор</label>
+                    <input id="password-again" name="password-again" type="password" placeholder="Повторите пароль">
+                </div>
+                <input id="change-password-submit" class="register-button" value="Изменить пароль" type="submit">
             </form>
         </div>
     </div>

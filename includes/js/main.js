@@ -94,10 +94,11 @@ var personal = {
             });
             return false;
         }
+        console.log(field);
         if (field.val() === '') {
             obj.markFieldError(field);
             obj.showErrorMessage(obj);
-            field.on('click', function () {
+            field.on('focus', function () {
                 obj.clearFieldError(field);
                 obj.clearErrorMessage(obj);
             });

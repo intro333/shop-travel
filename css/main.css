@@ -117,7 +117,7 @@ nav {
     margin-bottom: 10px;
 }
 .register-filds-label {
-    width: 100px;
+    width: 120px;
     padding-right: 10px;
     text-align: right;
     letter-spacing: 1px;
@@ -177,11 +177,12 @@ nav {
 }
 .register-button {
     border-radius: 2px;
-    /*border: 1px solid #a2a2a2;*/
+    border: none !important;
     background: steelblue;
     color: white;
     text-align: center;
     padding: 4px 0 4px 0;
+    letter-spacing: 1px;
 }
 .register-button:hover {
     cursor: pointer;
