@@ -1,5 +1,16 @@
 <html>
     <head>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <!-- Jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+        <link media="all" type="text/css" rel="stylesheet" href="/includes/css/bootstrap-datepicker3.min.css">
+        <meta charset="UTF-8">
         <title>Registration</title>
         <link rel="stylesheet" type="text/css" href="../css/main.css">
     </head>
@@ -15,37 +26,49 @@
                         <div class="middle-button"><p>Войти</p></div>
                     </div>
                     <div class="register-filds">
-                        <div class="register-filds-label-input">
-                            <label class="register-filds-label" for="fname">Имя*</label>
-                            <input id="fname" name="fname" type="fname" placeholder="Введите имя">
-                        </div>
-                        <div class="register-filds-label-input">
-                            <label class="register-filds-label" for="sname">Фамилия*</label>
-                            <input id="sname" name="sname" type="sname" placeholder="Введите фамилию">
-                        </div>
-                        <div class="register-filds-label-input">
-                            <label class="register-filds-label" for="email">Email*</label>
-                            <input id="email" name="email" type="email" placeholder="Введите электронную почту">
-                        </div>
-                        <div class="register-filds-label-input">
-                            <label class="register-filds-label" for="password">Пароль*</label>
-                            <input id="password" name="password" type="password" placeholder="Введите пароль">
-                        </div>
-                        <div class="register-filds-label-input">
-                            <label class="register-filds-label" for="password-again">Повтор*</label>
-                            <input id="password-again" name="password-again" type="password" placeholder="Повторите пароль">
-                        </div>
-                        <div class="register-filds-label-input">
-                            <label class="register-filds-label" for="phone">Телефон*</label>
-                            <input id="phone" name="phone" type="phone" placeholder="+7(__)__ ___">
-                        </div>
-                        <div class="register-filds-elements">
-                            <label class="register-filds-label"></label>
-                            <div class="register-button"><p>Зарегистрироваться</p></div>
-                        </div>
+                        <form action="/register" method="POST">
+                            <div class="register-filds-label-input">
+                                <label class="register-filds-label" for="fname">Имя*</label>
+                                <input id="fname" name="fname" type="text" placeholder="Введите имя">
+                            </div>
+                            <div class="register-filds-label-input">
+                                <label class="register-filds-label" for="sname">Фамилия*</label>
+                                <input id="sname" name="sname" type="text" placeholder="Введите фамилию">
+                            </div>
+                            <div class="register-filds-label-input">
+                                <label class="register-filds-label" for="email">Email*</label>
+                                <input id="email" name="email" type="email" placeholder="Введите электронную почту">
+                            </div>
+                            <div class="register-filds-label-input">
+                                <label class="register-filds-label" for="password">Пароль*</label>
+                                <input id="password" name="password" type="password" placeholder="Введите пароль">
+                            </div>
+                            <div class="register-filds-label-input">
+                                <label class="register-filds-label" for="password-again">Повтор*</label>
+                                <input id="password-again" name="password-again" type="password" placeholder="Повторите пароль">
+                            </div>
+                            <div class="register-filds-label-input">
+                                <label class="register-filds-label" for="phone">Телефон</label>
+                                <input id="phone" name="phone" type="text" placeholder="+7(___) ___ __ __">
+                            </div>
+                            <div class="register-filds-elements">
+                                <label class="register-filds-label"></label>
+                                <div id="register-submit" class="register-button"><p>Зарегистрироваться</p></div>
+                            </div>
+                            <div class="register-filds-elements">
+                                <label class="register-filds-label"></label>
+                                <p style="color: red; display: none;" class="error_message">Заполните все поля помеченные звёздочкой.</p>
+                            </div>
+
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </body>
+    <script src="/includes/js/bootstrap-datepicker.min.js"></script>
+    <script src="/includes/js/jquery.maskedinput.min.js"></script>
+    <script src="/includes/js/bootstrap-datepicker.ru.min.js"></script>
+    <script src="/includes/js/main.js"></script>
+    <script src="/includes/js/function.js"></script>
 </html>

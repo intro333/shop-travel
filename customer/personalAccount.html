@@ -1,39 +1,81 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+    <link media="all" type="text/css" rel="stylesheet" href="/includes/css/bootstrap-datepicker3.min.css">
+
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <meta charset="UTF-8">
     <title>Личный Кабинет</title>
 </head>
 <body>
 <div class="container">
-    <h2>Редактирование личных данных</h2>
-    <hr>
+    <h1>Редактирование личных данных</h1>
+    <!--<hr>-->
     <div class="personal-container">
         <div class="image-container">
             <div class="customer-image">
-
+                <img src="/images/no-image.png">
             </div>
+            <div class="register-button"><p>Добавить фото</p></div>
         </div>
         <div class="customer-data-container">
-            <div class="register-filds-label-input">
-                <label class="register-filds-label" for="fname">Имя</label>
-                <input id="fname" name="fname" type="fname" placeholder="Введите имя">
-            </div>
-            <div class="register-filds-label-input">
-                <label class="register-filds-label" for="sname">Фамилия</label>
-                <input id="sname" name="sname" type="sname" placeholder="Введите фамилию">
-            </div>
-            <div class="register-filds-label-input">
-                <label class="register-filds-label" for="email">Email</label>
-                <input id="email" name="email" type="email" placeholder="Введите электронную почту">
-            </div>
-            <div class="register-filds-label-input">
-                <label class="register-filds-label" for="phone">Телефон</label>
-                <input id="phone" name="phone" type="phone" placeholder="+7(__)__ ___">
-            </div>
+            <form action="/personal" method="POST">
+                <div class="personal-filds-label-input">
+                    <label class="personal-filds-label" for="fname">Имя</label>
+                    <input id="fname" name="fname" type="text">
+                </div>
+                <div class="personal-filds-label-input">
+                    <label class="personal-filds-label" for="sname">Фамилия</label>
+                    <input id="sname" name="sname" type="text">
+                </div>
+                <div class="personal-filds-label-input">
+                    <label class="personal-filds-label" for="mname">Отчество</label>
+                    <input id="mname" name="mname" type="text">
+                </div>
+                <div class="personal-filds-label-input">
+                    <label class="personal-filds-label" for="gender">Пол</label>
+                    <select class="form-control" id="gender" name="gender">
+                        <option value="NO">Не выбран</option>
+                        <option value="M">Мужской</option>
+                        <option value="F">Женский</option>
+                    </select>
+                </div>
+                <div class="personal-filds-label-input">
+                    <label class="personal-filds-label" for="email">Email</label>
+                    <input id="email" name="email" type="email">
+                </div>
+                <div class="personal-filds-label-input">
+                    <label class="personal-filds-label" for="phone">Телефон</label>
+                    <input id="phone" name="phone" type="text" placeholder="+7(___) ___ __ __">
+                </div>
+                <div class="personal-filds-label-input">
+                    <label class="personal-filds-label" for="birthdate">Дата рождения</label>
+                    <div class='input-group date' id='datetimepicker'>
+                        <input value="" name="birthdate" id="birthdate" class="form-control">
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+                <p style="color: red; display: none;" class="error_message_for_create">Заполните все поля помеченные звёздочкой.</p>
+                <div id="personal-submit" class="register-button"><p>Сохранить данные</p></div>
+            </form>
         </div>
     </div>
 </div>
 </body>
+<script src="/includes/js/bootstrap-datepicker.min.js"></script>
+<script src="/includes/js/jquery.maskedinput.min.js"></script>
+<script src="/includes/js/bootstrap-datepicker.ru.min.js"></script>
+<script src="/includes/js/main.js"></script>
+<script src="/includes/js/function.js"></script>
 </html>
