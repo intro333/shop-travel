@@ -1,0 +1,247 @@
+body {
+    background: #f2f2f2;
+}
+h2 {
+    color: steelblue !important;
+}
+hr {
+    border: none;
+    color: steelblue;
+    background-color: steelblue; /* Цвет линии для браузера Firefox и Opera */
+    height: 1px; /* Толщина линии */
+}
+/*Главный контейнер, который задаёт отступ для всех страниц*/
+.container {
+    /*display: flex;*/
+    /*justify-content: center;*/
+    padding: 20px;
+
+}
+/*НАВИГАЦИОННАЯ ПАНЕЛЬ(МЕНЮ) НАЧАЛО------------------------------------------------------------------*/
+@import url(https://fonts.googleapis.com/css?family=Lora);
+body {margin:0;}
+h2 {
+    font-family: monospace;
+    color: #606060;
+}
+ul {
+    list-style: none;
+    margin: 0 auto;
+}
+a {
+    text-decoration: none;
+    font-family: 'Lora', serif;
+    transition: .5s linear;
+}
+i {
+    margin-right: 10px;
+}
+nav {
+    display: block;
+    width: 660px;
+    margin: 0 auto 30px;
+}
+.one ul {
+    padding: 1em 0;
+    background: #ECDAD6;
+}
+.one a {
+    padding: 1em;
+    background: rgba(177, 152, 145, .3);
+    border-right: 1px solid #b19891;
+    color: #695753;
+}
+.one a:hover {background: #b19891;}
+.one li {
+    display: inline;
+}
+/*НАВИГАЦИОННАЯ ПАНЕЛЬ(МЕНЮ) КОНЕЦ------------------------------------------------------------------*/
+
+/*ФОРМА РЕГИСТРАЦИИ НАЧАЛО------------------------------------------------------------------*/
+/*Главный див для форм входа и регистрации*/
+.register-container-main {
+    display: flex;
+    justify-content: center;
+}
+.register-container {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+}
+/*Голова формы(верхняя часть формы с загруглёнными краями и синим фоном)*/
+.register-header {
+    border: 1px solid #808080;
+    background: steelblue;
+    color: white;
+    border-radius: 8px 8px 0 0;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/*Для тега <p>, который находится в голове формы, убираем внешние отступы*/
+.register-header p {
+    margin: 0;
+}
+.main-text {
+    font-size: 18px;
+}
+.explain-text {
+    font-size: 13px;
+}
+/*Тело формы, где поля ввода*/
+.register-filds {
+    padding: 30px 15px 20px 15px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #808080;
+    border-top: 0;
+    justify-content: flex-start;
+    background: #fff;
+}
+/*Див для меток(label) и их инпутов*/
+.register-filds-label-input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+/*Див для чекбокса и кнопки*/
+.register-filds-elements {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+.register-filds-label {
+    width: 100px;
+    padding-right: 10px;
+    text-align: right;
+    letter-spacing: 1px;
+}
+.register-filds-elements div {
+    width: 100%;
+}
+.customer-data-container input,.register-filds input {
+    width: 100%;
+    height: 30px;
+    padding-left: 5px;
+    border-radius: 4px;
+    border: 1px solid #a2a2a2;
+    /*font-style: italic;*/
+}
+.register-filds input:focus {
+    outline: none;
+    border: 1px solid #696969;
+}
+/*Кнопки*/
+.middle-button {
+    border-radius: 2px;
+    border: 0;
+    background: #fff;
+    color: #000;
+    text-align: center;
+    padding: 2px 15px 2px 15px;
+    margin-right: 15px;
+}
+.middle-button:hover {
+    cursor: pointer;
+    background-color: #f3f3f3;
+}
+.middle-button:active {
+    padding: 1px 14px 1px 14px;
+}
+.login-button {
+    margin-right: 15px;
+    border-radius: 2px;
+    /*border: 1px solid #a2a2a2;*/
+    background: steelblue;
+    color: white;
+    text-align: center;
+    padding: 4px 0 4px 0;
+    width: 120px !important;float: left;
+}
+.login-button:hover {
+    cursor: pointer;
+    background: #2b5372;
+}
+.login-button:active {
+    background: #1b3447;
+}
+.login-button p {
+    margin: 0;
+    letter-spacing: 1px;
+}
+.register-button {
+    border-radius: 2px;
+    /*border: 1px solid #a2a2a2;*/
+    background: steelblue;
+    color: white;
+    text-align: center;
+    padding: 4px 0 4px 0;
+}
+.register-button:hover {
+    cursor: pointer;
+    background: #2b5372;
+}
+.register-button:active {
+    background: #1b3447;
+}
+.register-button p {
+    margin: 0;
+    letter-spacing: 1px;
+}
+.recover-password {
+    vertical-align: sub;
+}
+/*ФОРМА РЕГИСТРАЦИИ КОНЕЦ------------------------------------------------------------------*/
+
+/*CHECKBOX НАЧАЛО------------------------------------------------------------------*/
+input[type=checkbox] + label {
+    float: left;
+}
+input[type="checkbox"] {
+    display:none;
+}
+input[type="checkbox"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    background:url(../images/check_radio_sheet.png) left top no-repeat;
+    cursor:pointer;
+}
+input[type="checkbox"]:checked + label span {
+    background:url(../images/check_radio_sheet.png) -19px top no-repeat;
+}
+/*CHECKBOX КОНЕЦ------------------------------------------------------------------*/
+
+/*ЛИЧНЫЙ КАБИНЕТ.РЕДАКТИРОВАНИЕ ДАННЫХ. НАЧАЛО---------------------------------------------------*/
+.personal-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+}
+.image-container {
+    width: 25%;
+}
+.customer-data-container {
+    width: 75%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /*background: #fff;*/
+}
+.customer-image {
+    width: 100%;
+    height: 250px;
+    border: 1px solid #808080;
+    background: #eaeaea;
+}
+/*ЛИЧНЫЙ КАБИНЕТ.РЕДАКТИРОВАНИЕ ДАННЫХ. КОНЕЦ---------------------------------------------------*/
