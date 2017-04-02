@@ -19,16 +19,22 @@
 <body>
 <div class="container">
     <h1>Редактирование личных данных</h1>
+    <p class="personal-explain-text">Здесь вы можете отредактировать личные данные, изменить пароль и добавить своё фото.</p>
     <!--<hr>-->
     <div class="personal-container">
         <div class="image-container">
             <div class="customer-image">
                 <img src="/images/no-image.png">
             </div>
-            <div class="register-button"><p>Добавить фото</p></div>
+            <div class="customer-image-button">
+                <div class="register-button" id="add-avatar">
+                    <p>Добавить фото</p>
+                </div>
+                <input name="personal-photo" id="personal-photo" required="" type="file">
+            </div>
         </div>
         <div class="customer-data-container">
-            <form action="/personal" method="POST">
+            <form action="/personal" method="POST" id="personal-data-form">
                 <div class="personal-filds-label-input">
                     <label class="personal-filds-label" for="fname">Имя</label>
                     <input id="fname" name="fname" type="text">
@@ -71,9 +77,9 @@
             </form>
         </div>
         <div class="customer-data-container">
-            <form action="/change-password" method="POST" id="change-password">
+            <form action="/change-password" method="POST" id="change-password-form">
                 <div class="personal-filds-label-input">
-                    <label class="personal-filds-label" for="password">Старый пароль</label>
+                    <label class="personal-filds-label" for="password-old">Старый пароль</label>
                     <input id="password-old" name="password-old" type="password" placeholder="Введите пароль">
                 </div>
                 <div class="personal-filds-label-input">
@@ -85,6 +91,7 @@
                     <input id="password-again" name="password-again" type="password" placeholder="Повторите пароль">
                 </div>
                 <input id="change-password-submit" class="register-button" value="Изменить пароль" type="submit">
+                <div style="color: red; display: none;margin-top: 5px" class="error_message">Заполните все 3 поля с паролями.</div>
             </form>
         </div>
     </div>

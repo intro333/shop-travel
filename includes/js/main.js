@@ -1,4 +1,4 @@
-var personal = {
+var formChecking = {
     init: function () {
         var _this = this;
 
@@ -11,15 +11,17 @@ var personal = {
     },
     setObjects: function() {
         this.element = {};
+        this.element.formRegister = $('#register-form');
+        this.element.formChangePassword = $('#change-password-form');
         this.element.formFName = $('#fname');
         this.element.formSName = $('#sname');
         this.element.formMName = $('#mname');
         this.element.formEmail = $('#email');
+        this.element.formPassOld = $('#password-old');
         this.element.formPass = $('#password');
         this.element.formPassAgain = $('#password-again');
         this.element.formPhone = $('#phone');
         this.element.formGender = $('#gender');
-        this.element.formRegisterSubmit = $('#register-submit');
         this.element.fieldBirthdate = $('#birthdate');
         this.element.formBirthdate = $('#datetimepicker');
         this.element.blockErrors = $('.error_message');
@@ -35,7 +37,8 @@ var personal = {
     setEventHandlers: function() {
         var validateFormCallback = Function.createCallback(this.validateForm, this);
 
-        this.element.formRegisterSubmit.on('click', validateFormCallback);
+        this.element.formRegister.on('submit', validateFormCallback);
+        this.element.formChangePassword.on('submit', validateFormCallback);
     },
     datePicker: function() {
         this.element.formBirthdate.datepicker({
@@ -65,16 +68,21 @@ var personal = {
     },
     validateForm: function(e, obj) {
 
-        if(!obj.isValid(obj, obj.element.formGender)) {
-            e.preventDefault();
+        // if(!obj.isValid(obj, obj.element.formGender)) {
+        //     e.preventDefault();
+        // }
+        if (obj.element.formRegister.length) {
+            if (!obj.isValid(obj, obj.element.formFName)) {
+                e.preventDefault();
+            }
+            if (!obj.isValid(obj, obj.element.formSName)) {
+                e.preventDefault();
+            }
+            if (!obj.isValid(obj, obj.element.formEmail)) {
+                e.preventDefault();
+            }
         }
-        if(!obj.isValid(obj, obj.element.formFName)) {
-            e.preventDefault();
-        }
-        if(!obj.isValid(obj, obj.element.formSName)) {
-            e.preventDefault();
-        }
-        if(!obj.isValid(obj, obj.element.formEmail)) {
+        if(!obj.isValid(obj, obj.element.formPassOld)) {
             e.preventDefault();
         }
         if(!obj.isValid(obj, obj.element.formPass)) {
@@ -94,7 +102,6 @@ var personal = {
             });
             return false;
         }
-        console.log(field);
         if (field.val() === '') {
             obj.markFieldError(field);
             obj.showErrorMessage(obj);
@@ -108,6 +115,43 @@ var personal = {
     }
 };
 
+var personal = {
+    init: function () {
+        var _this = this;
+
+        _this.setObjects();
+        _this.setConstants();
+        _this.buttonAddAvatarOperacy();
+        _this.addAvatar();
+    },
+    setObjects: function() {
+        this.element = {};
+        this.element.personalPhoto = $('#personal-photo');
+        this.element.addAvatar = $('#add-avatar');
+    },
+    setConstants: function() {
+        this.const = {};
+    },
+    buttonAddAvatarOperacy: function () {
+        var addAvatar = this.element.addAvatar;
+        this.element.personalPhoto.on('mouseover', function () {
+            addAvatar.css('background', '#2b5372');
+        });
+        this.element.personalPhoto.on('mouseout', function () {
+            addAvatar.css('background', '');
+        });
+        this.element.personalPhoto.on('change', function () {
+            console.log("Отправка аватара на бекенд и обработка");
+            //Здесь будет AJAX запрос.Отправка картинки серверу, сохранение её в папке пользователя.
+            //Сразу же после удачной отправки поместить это изображение в аватар.
+        });
+    },
+    addAvatar: function () {
+    }
+};
+
 $(document).ready(function() {
+    formChecking.init();
+
     personal.init();
 });
