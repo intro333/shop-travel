@@ -4,9 +4,9 @@ html, body {
     min-width: 320px;
     height: 100%;
     /*adaptive*/ }
-h1, h2 {
+h1, h2, h3 {
     color: steelblue !important;
-    margin-bottom: 0 !important;
+    margin: 0 !important;
 }
 hr {
     border: none;
@@ -293,6 +293,30 @@ input[type="checkbox"]:checked + label span {
 /*ЛИЧНЫЙ КАБИНЕТ.РЕДАКТИРОВАНИЕ ДАННЫХ. КОНЕЦ---------------------------------------------------*/
 
 /*СТРАНИЦА КАТЕГОРИЙ И ПРОДУКТОВ. НАЧАЛО---------------------------------------------------*/
+.category-head {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.bread-crumbs-circle {
+    width: 10px;
+    height: 10px;
+    background: #555;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    margin: 0 10px;
+}
+.bread-crumbs-link {
+    color: #555 !important;
+}
+.bread-crumbs-link:hover {
+    color: #222 !important;
+    text-decoration: underline !important;
+}
+.bread-crumbs-on-page {
+
+}
 .category-all {
     display: -ms-flexbox;
     display: flex;
