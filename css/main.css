@@ -1,8 +1,10 @@
-body {
-    background: #f2f2f2;
-    /*background-image: url('/images/background.png');;*/
-}
-h1 {
+html, body {
+    width: 100%;
+    /*adaptive*/
+    min-width: 320px;
+    height: 100%;
+    /*adaptive*/ }
+h1, h2 {
     color: steelblue !important;
     margin-bottom: 0 !important;
 }
@@ -14,27 +16,30 @@ hr {
 }
 /*Главный контейнер, который задаёт отступ для всех страниц*/
 .container {
-    /*display: flex;*/
-    /*justify-content: center;*/
+    background: #f2f2f2;
+    height: 100% !important;
     padding: 20px;
+    -webkit-box-shadow: 0px 4px 15px 5px rgba(94,94,94,0.32);
+    -moz-box-shadow: 0px 4px 15px 5px rgba(94,94,94,0.32);
+    box-shadow: 0px 4px 15px 5px rgba(94,94,94,0.32);
 
 }
+a {
+    text-decoration: none !important;
+}
+
 /*НАВИГАЦИОННАЯ ПАНЕЛЬ(МЕНЮ) НАЧАЛО------------------------------------------------------------------*/
 @import url(https://fonts.googleapis.com/css?family=Lora);
-body {margin:0;}
-h2 {
-    font-family: monospace;
-    color: #606060;
-}
+
+/*h2 {*/
+    /*font-family: monospace;*/
+    /*color: #606060;*/
+/*}*/
 ul {
     list-style: none;
     margin: 0 auto;
 }
-a {
-    text-decoration: none;
-    font-family: 'Lora', serif;
-    transition: .5s linear;
-}
+
 i {
     margin-right: 10px;
 }
@@ -286,3 +291,45 @@ input[type="checkbox"]:checked + label span {
     z-index:1;
 }
 /*ЛИЧНЫЙ КАБИНЕТ.РЕДАКТИРОВАНИЕ ДАННЫХ. КОНЕЦ---------------------------------------------------*/
+
+/*СТРАНИЦА КАТЕГОРИЙ И ПРОДУКТОВ. НАЧАЛО---------------------------------------------------*/
+.category-all {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 5px -5px; }
+.category-item {
+    background: white;
+    border: 1px solid #a2a2a2;
+    width: calc(23% - 10px);
+    min-width: 200px;
+    margin: 10px 5px 10px; }
+.category-item:hover {
+    cursor: pointer;
+    -webkit-box-shadow: 1px 2px 9px 2px rgba(158,158,158,0.54);
+    -moz-box-shadow: 1px 2px 9px 2px rgba(158,158,158,0.54);
+    box-shadow: 1px 2px 9px 2px rgba(158,158,158,0.54);
+}
+.category-item:hover .category-item__name {
+    color: #000;
+}
+.category-item__img {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.category-item__name {
+    padding: 10px;
+    display: table-cell;
+    margin-bottom: 14px;
+    line-height: 20px;
+    vertical-align: inherit;
+    color: #444;
+    font-size: 20px;
+}
+
+
+
+/*СТРАНИЦА КАТЕГОРИЙ И ПРОДУКТОВ. КОНЕЦ---------------------------------------------------*/
