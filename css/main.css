@@ -17,7 +17,7 @@ hr {
 /*Главный контейнер, который задаёт отступ для всех страниц*/
 .container {
     background: #f2f2f2;
-    height: 100% !important;
+    min-height: 100% !important;
     padding: 20px;
     -webkit-box-shadow: 0px 4px 15px 5px rgba(94,94,94,0.32);
     -moz-box-shadow: 0px 4px 15px 5px rgba(94,94,94,0.32);
@@ -330,7 +330,6 @@ input[type="checkbox"]:checked + label span {
     min-width: 200px;
     margin: 10px 5px 10px; }
 .category-item:hover {
-    cursor: pointer;
     -webkit-box-shadow: 1px 2px 9px 2px rgba(158,158,158,0.54);
     -moz-box-shadow: 1px 2px 9px 2px rgba(158,158,158,0.54);
     box-shadow: 1px 2px 9px 2px rgba(158,158,158,0.54);
@@ -343,6 +342,10 @@ input[type="checkbox"]:checked + label span {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    padding: 0 20px 0 20px;
+}
+.category-item__img img {
+    /*width: 100%;*/
 }
 .category-item__name {
     padding: 10px;
@@ -353,7 +356,58 @@ input[type="checkbox"]:checked + label span {
     color: #444;
     font-size: 20px;
 }
-
-
-
+.add-to-cart-button {
+    width: 100%;
+    position: relative;
+    border-radius: 2px;
+    border: none !important;
+    background: steelblue;
+    color: white;
+    text-align: center;
+    padding: 4px 10px 4px 10px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.add-to-cart-button:hover {
+    cursor: pointer;
+    background: #2b5372;
+}
+.add-to-cart-button:active {
+    background: #1b3447;
+}
+.add-to-cart-button p {
+    margin: 0;
+}
+.category-item__price-measure {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 5px 0 15px 0;
+}
+.category-item__price-measure span {
+    font-size: 16px;
+    font-weight: bold;
+    color: #3c763d;
+}
+.category-item__price-measure select {
+    outline: none;
+    color: #fff;
+    background-image: url(../images/meatorchicken/select-mark.png), -webkit-linear-gradient(#3c763d, #3c763d 40%, #3c763d);
+    background-color: #3c763d;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    padding-left: 8px;
+    -webkit-appearance: button;
+    -webkit-user-select: none;
+    background-position: 80% center;
+    background-repeat: no-repeat;
+    border: none;
+    font-size: inherit;
+    margin-right: 4px;
+    width: 50px;
+}
+.category-item__price-measure:hover select {
+    cursor: pointer;
+}
 /*СТРАНИЦА КАТЕГОРИЙ И ПРОДУКТОВ. КОНЕЦ---------------------------------------------------*/
