@@ -410,4 +410,86 @@ input[type="checkbox"]:checked + label span {
 .category-item__price-measure:hover select {
     cursor: pointer;
 }
+
+/*.order */
+.order-number {
+    position: relative;
+    width: 100px;
+    height: 30px;
+    margin: 0 auto;
+    border: 2px solid #3c763d;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.order-number__field {
+    height: 100%;
+    padding: 0 26px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.order-number__field input {
+    font-weight: 600;
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #3c763d;
+    font-size: 13px;
+    font-family: ToyotaDisplay-Bold, 'sans-serif';
+    text-align: center;
+    -moz-appearance: textfield;
+    background: #fff;
+    outline: none;
+    border: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
+.order-number__field input::-webkit-inner-spin-button, .order-number__field input::-webkit-outer-spin-button {
+    margin: 0;
+    /* в каких-то браузерах присутствует отступ */
+    -webkit-appearance: none; }
+.order-number__spin.minus {
+    left: 8px;
+}
+.order-number__spin {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+}
+.order-number__spin.minus:after {
+    background-position: 0 0;
+}
+.order-number__spin:after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background: url(../images/meatorchicken/product-count.png) no-repeat;
+}
+.order-number__spin.plus {
+    right: 8px;
+}
+.order-number__spin {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+}
+.order-number__spin.plus:after {
+    background-position: 0 -10px;
+}
+
+.order-number__spin:after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background: url(../images/meatorchicken/product-count.png) no-repeat;
+}
+
 /*СТРАНИЦА КАТЕГОРИЙ И ПРОДУКТОВ. КОНЕЦ---------------------------------------------------*/

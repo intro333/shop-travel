@@ -1,3 +1,6 @@
+/*
+* Форма регистрации
+*/
 var formChecking = {
     init: function () {
         var _this = this;
@@ -114,7 +117,9 @@ var formChecking = {
         return true;
     }
 };
-
+/*
+* Личный кабинет.Редактирование личных данных.
+*/
 var personal = {
     init: function () {
         var _this = this;
@@ -149,9 +154,60 @@ var personal = {
     addAvatar: function () {
     }
 };
+/*
+* Страница с продуктами.
+*/
+var products = {
+    init: function () {
+        var _this = this;
+
+        _this.setObjects();
+        _this.setConstants();
+        _this.addProductCounts();
+    },
+    setObjects: function() {
+        this.element = {};
+        this.element.orderNumberMain = $('.order-number');
+    },
+    setConstants: function() {
+        this.const = {};
+    },
+    addProductCounts: function () {
+        this.element.orderNumberMain.bind('click', function (event) {
+            var eventTarget = event.target.classList[1];
+
+            var childInput = $(this).find('.order-number-inp');
+            var maxCount = childInput.attr('max');
+            if (eventTarget == 'plus') {
+                if (parseInt(childInput.val()) >= maxCount) {} else {
+                    childInput.css('border', '');
+                    childInput.val(parseInt(childInput.val()) + 1)
+                }
+            } else if (eventTarget == 'minus') {
+                if(parseInt(childInput.val()) <= 0) {
+                    childInput.css('border', '2px solid red');
+                } else {
+                    childInput.css('border', '');
+                    childInput.val(parseInt(childInput.val()) - 1)
+                }
+            }
+        });
+
+        this.element.orderNumberMain.bind('change', function (event) {
+            var childInput = $(this).find('.order-number-inp');
+            var maxCount = childInput.attr('max');
+            childInput.css('border', '');
+            if (parseInt(childInput.val()) > parseInt(maxCount)) {
+                childInput.val(0)
+            }
+        });
+    }
+};
 
 $(document).ready(function() {
     formChecking.init();
 
     personal.init();
+
+    products.init();
 });
