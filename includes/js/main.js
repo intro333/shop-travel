@@ -174,33 +174,20 @@ var products = {
     },
     addProductCounts: function () {
         this.element.orderNumberMain.bind('click', function (event) {
-            var eventTarget = event.target.classList[1];
-
-            var childInput = $(this).find('.order-number-inp');
-            var maxCount = childInput.attr('max');
-            if (eventTarget == 'plus') {
-                if (parseInt(childInput.val()) >= maxCount) {} else {
-                    childInput.css('border', '');
-                    childInput.val(parseInt(childInput.val()) + 1)
-                }
-            } else if (eventTarget == 'minus') {
-                if(parseInt(childInput.val()) <= 0) {
-                    childInput.css('border', '2px solid red');
-                } else {
-                    childInput.css('border', '');
-                    childInput.val(parseInt(childInput.val()) - 1)
-                }
-            }
+            var elements = [$(this).find('.order-number-inp')];
+            new ClassOrderNumberHelper( event, elements);
         });
 
-        this.element.orderNumberMain.bind('change', function (event) {
+        this.element.orderNumberMain.bind('change', function () {
             var childInput = $(this).find('.order-number-inp');
             var maxCount = childInput.attr('max');
             childInput.css('border', '');
-            if (parseInt(childInput.val()) > parseInt(maxCount)) {
+            if (parseInt(childInput.val()) > parseInt(maxCount) || !parseInt(childInput.val())) {
                 childInput.val(0)
             }
         });
+    },
+    orderNumberMainHelper: function () {
     }
 };
 
