@@ -164,21 +164,24 @@ var products = {
         _this.setObjects();
         _this.setConstants();
         _this.addProductCounts();
+        _this.addProductToCartApi();
     },
     setObjects: function() {
         this.element = {};
-        this.element.orderNumberMain = $('.order-number');
+        this.element.orderNumber = $('.order-number');
+        this.element.addToCartButton = $('.add-to-cart-button');
+        this.element.orderNumberInp = $('.order-number-inp');
     },
     setConstants: function() {
         this.const = {};
     },
     addProductCounts: function () {
-        this.element.orderNumberMain.bind('click', function (event) {
+        this.element.orderNumber.bind('click', function (event) {
             var elements = [$(this).find('.order-number-inp')];
             new ClassOrderNumberHelper( event, elements);
         });
 
-        this.element.orderNumberMain.bind('change', function () {
+        this.element.orderNumber.bind('change', function () {
             var childInput = $(this).find('.order-number-inp');
             var maxCount = childInput.attr('max');
             childInput.css('border', '');
@@ -187,14 +190,43 @@ var products = {
             }
         });
     },
-    orderNumberMainHelper: function () {
+    addProductToCartApi: function () {
+        var inp = this.element.orderNumberInp;
+
+        this.element.addToCartButton.bind('click', function () {
+            var parent = $(this).parent();
+            var count = parent.find(inp).val();
+            var productId = parent.find(inp).attr('data-product-id');
+
+            var url = '/layout/add-product';
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $.ajax({
+                type: "POST",
+                url: url,
+                dataType: 'json',
+                data: {
+                    productId: productId,
+                    count:     count
+                },
+                success: function(data) {
+                    console.log(data);
+                }
+            });
+        });
     }
 };
 
 $(document).ready(function() {
+
     formChecking.init();
 
     personal.init();
 
     products.init();
+
 });
