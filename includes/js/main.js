@@ -221,6 +221,54 @@ var products = {
     }
 };
 
+/*
+ * Корзина.
+ */
+var cart = {
+    init: function () {
+        var _this = this;
+
+        _this.setObjects();
+        _this.setConstants();
+        _this.deleteProduct();
+    },
+    setObjects: function() {
+        this.element = {};
+        this.element.orderNumber = $('.order-number');
+    },
+    setConstants: function() {
+        this.const = {};
+    },
+    deleteProduct: function () {
+        var inp = this.element.orderNumberInp;
+
+        this.element.addToCartButton.bind('click', function () {
+            var parent = $(this).parent();
+            var count = parent.find(inp).val();
+            var productId = parent.find(inp).attr('data-product-id');
+
+            var url = '/';
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $.ajax({
+                type: "POST",
+                url: url,
+                dataType: 'json',
+                data: {
+
+                },
+                success: function(data) {
+                    console.log(data);
+                }
+            });
+        });
+    }
+};
+
 $(document).ready(function() {
 
     formChecking.init();
@@ -228,5 +276,7 @@ $(document).ready(function() {
     personal.init();
 
     products.init();
+
+    cart.init();
 
 });

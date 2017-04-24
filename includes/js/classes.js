@@ -10,8 +10,8 @@ var ClassOrderNumberHelper = function( event, elementsArray ) {
                 value.val(parse(value) + 1)
             }
         } else if (eventTarget == 'minus') {
-            if(parse(value) <= 0) {
-                value.css('border', '2px solid red');
+            if(parse(value) <= 1) {
+                // value.css('border', '2px solid red');
             } else {
                 value.css('border', '');
                 value.val(parse(value) - 1)
