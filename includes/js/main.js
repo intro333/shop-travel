@@ -197,8 +197,8 @@ var products = {
             var parent = $(this).parent();
             var count = parent.find(inp).val();
             var productId = parent.find(inp).attr('data-product-id');
-
             var url = '/layout/add-product';
+
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -235,6 +235,7 @@ var cart = {
     setObjects: function() {
         this.element = {};
         this.element.orderNumber = $('.order-number');
+        this.element.removProduct = $('.remove-product');
     },
     setConstants: function() {
         this.const = {};
@@ -242,29 +243,29 @@ var cart = {
     deleteProduct: function () {
         var inp = this.element.orderNumberInp;
 
-        this.element.addToCartButton.bind('click', function () {
-            var parent = $(this).parent();
-            var count = parent.find(inp).val();
-            var productId = parent.find(inp).attr('data-product-id');
-
-            var url = '/';
+        this.element.removProduct.bind('click', function () {
+            var parent = $(this).parent().parent()
+            var productId = $(this).attr('data-product-id');
+            var url = '/layout/add-product';
+            parent.remove()
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
 
-            $.ajax({
-                type: "POST",
-                url: url,
-                dataType: 'json',
-                data: {
-
-                },
-                success: function(data) {
-                    console.log(data);
-                }
-            });
+            // $.ajax({
+            //     type: "POST",
+            //     url: url,
+            //     dataType: 'json',
+            //     data: {
+            //         productId: productId,
+            //     },
+            //     success: function(data) {
+            //         parent.remove()
+            //         console.log(data);
+            //     }
+            // });
         });
     }
 };

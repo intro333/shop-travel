@@ -30,7 +30,7 @@
         </tr>
         <tr>
             <td class="table-40-procent-td">
-                <img src="/images/meatorchicken/beef.jpg" height="100" style="margin-right: 30px">
+                <img class="cart-product-image" src="/images/meatorchicken/beef.jpg" height="70" style="margin-right: 30px">
                 <span>Говядина</span>
             </td>
             <td>800 ₽ / кг.</td>
@@ -39,7 +39,7 @@
                     <div class="b-number">
                         <div class="order-number">
                             <div class="order-number__field">
-                                <input type="number" max="99" min="0" value="1" class="order-number-inp" data-product-id="3">
+                                <input type="number" max="99" min="0" value="2" class="order-number-inp" data-product-id="1">
                             </div>
                             <div class="order-number__spin minus"></div>
                             <div class="order-number__spin plus"></div>
@@ -48,11 +48,13 @@
                 </div>
             </td>
             <td>1600 ₽</td>
-            <td style="color: firebrick;"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></td>
+            <td style="color: firebrick;">
+                <span class="remove-product glyphicon glyphicon-trash" aria-hidden="true"data-product-id="1"></span>
+            </td>
         </tr>
         <tr>
             <td class="table-40-procent-td">
-                <img src="/images/meatorchicken/pork.jpg" height="100" style="margin-right: 30px">
+                <img class="cart-product-image" src="/images/meatorchicken/pork.jpg" height="70" style="margin-right: 30px">
                 <span>Свинина</span>
             </td>
             <td>650 ₽ / кг.</td>
@@ -61,7 +63,7 @@
                     <div class="b-number">
                         <div class="order-number">
                             <div class="order-number__field">
-                                <input type="number" max="99" min="0" value="1" class="order-number-inp" data-product-id="3">
+                                <input type="number" max="99" min="0" value="2" class="order-number-inp" data-product-id="2">
                             </div>
                             <div class="order-number__spin minus"></div>
                             <div class="order-number__spin plus"></div>
@@ -70,11 +72,13 @@
                 </div>
             </td>
             <td>1300 ₽</td>
-            <td style="color: firebrick;"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></td>
+            <td>
+                <span class="remove-product glyphicon glyphicon-trash" aria-hidden="true" data-product-id="2"></span>
+            </td>
         </tr>
         <tr>
             <td class="table-40-procent-td">
-                <img src="/images/meatorchicken/veal.jpg" height="100" style="margin-right: 30px">
+                <img class="cart-product-image" src="/images/meatorchicken/veal.jpg" height="70" style="margin-right: 30px">
                 <span>Телятина</span>
             </td>
             <td>545 ₽ / шт.</td>
@@ -83,7 +87,7 @@
                     <div class="b-number">
                         <div class="order-number">
                             <div class="order-number__field">
-                                <input type="number" max="99" min="0" value="1" class="order-number-inp" data-product-id="3">
+                                <input type="number" max="99" min="0" value="3" class="order-number-inp" data-product-id="3">
                             </div>
                             <div class="order-number__spin minus"></div>
                             <div class="order-number__spin plus"></div>
@@ -92,9 +96,12 @@
                 </div>
             </td>
             <td>1635 ₽</td>
-            <td style="color: firebrick;"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></td>
+            <td style="color: firebrick;">
+                <span class="remove-product glyphicon glyphicon-trash" aria-hidden="true"data-product-id="3"></span>
+            </td>
         </tr>
     </table>
+    <div class="cart-order__total">Итог:&nbsp;<span>4535</span></div>
 </div>
 </body>
 <script src="/includes/js/libs/bootstrap-datepicker.min.js"></script>

@@ -529,4 +529,28 @@ th {
 .table-40-procent-td {
     text-align: left;
 }
+.remove-product {
+    color: indianred;
+}
+.remove-product:hover {
+    cursor: pointer;
+    color: firebrick;
+}
+.remove-product:active {
+    color: darkred;
+}
+.cart-product-image {
+    border: 1px solid #999;
+}
+.cart-order__total {
+    color: #999;
+    font-size: 24px;
+    font-family: Arial-Bold, 'sans-serif';
+    line-height: 36px;
+    letter-spacing: 6.24px;
+    text-transform: uppercase;
+    text-align: right;
+    margin: 35px 20px; }
+.cart-order__total span {
+    color: #444; }
 /*КОРЗИНА КОНЕЦ----------------------------------------------------------------------------------------------------*/
